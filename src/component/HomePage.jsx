@@ -1,0 +1,28 @@
+import React from 'react'
+import millify from 'millify'
+import { Link } from 'react-router-dom'
+import { Typography, Row, Col, Statistic} from 'antd'
+
+import { useGetCryptosQuery } from '../services/cryptoApi'
+
+const HomePage = () => {
+    const { data, isFetching } = useGetCryptosQuery();
+
+    console.log(data)
+ 
+    const { Title } = Typography
+    return (
+        <>
+            <Title level={2} className='heading'>Global Crypto Status</Title>
+            <Row>
+                <Col span={12}> <Statistic title="Total CryptoCurrencies" value={5}/></Col>
+                <Col span={12}> <Statistic title="Total Exchanges" value={22}/></Col>
+                <Col span={12}> <Statistic title="Total Market Cap" value={5}/></Col>
+                <Col span={12}> <Statistic title="Total 24hour Volume" value={5}/></Col>
+                <Col span={12}> <Statistic title="Total Markets" value={5}/></Col>
+            </Row>
+        </>
+    )
+}
+
+export default HomePage
