@@ -16,11 +16,11 @@ const App = () => {
             </Sider>
 
             <Layout className='main'>
-                <Content className='routes'>
+                <Content className='routes' style={{margin: '30px 20px'}}>
                         <Routes>
                             <Route path='/homepage' element={<HomePage />} />
                             <Route path='/exchanges' element={<Exchanges />} />
-                            <Route path='/cryptoCurrencies' element={<CryptoCurrencies />} />
+                            <Route path='/cryptoCurrencies' element={<CryptoCurrencies simplified/>} />
                             <Route  path='/crypto/:coinId' element={<CryptoDetail />} />
                             <Route  path='/news' element={<News />} />
                         </Routes>
