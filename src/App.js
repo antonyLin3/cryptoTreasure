@@ -20,7 +20,7 @@ const App = () => {
                         <Routes>
                             <Route path='/homepage' element={<HomePage />} />
                             <Route path='/exchanges' element={<Exchanges />} />
-                            <Route path='/cryptoCurrencies' element={<CryptoCurrencies simplified/>} />
+                            <Route path='/cryptoCurrencies' element={<CryptoCurrencies />} />
                             <Route  path='/crypto/:coinId' element={<CryptoDetail />} />
                             <Route  path='/news' element={<News />} />
                         </Routes>
@@ -38,8 +38,6 @@ const App = () => {
                 </Footer>
             </Layout>
         </Layout>
-        
-        
     </div>
     )
 }

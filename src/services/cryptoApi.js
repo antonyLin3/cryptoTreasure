@@ -19,7 +19,7 @@ export const cryptoApi = createApi({
     })
 })
 
-console.log("安安"+JSON.stringify(createRequest('/coins')))
+// console.log("安安"+JSON.stringify(createRequest('/coins')))
 
 export const { useGetCryptosQuery } = cryptoApi
 

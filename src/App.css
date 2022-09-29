@@ -1,0 +1,29 @@
+.home-heading-container {
+    margin-top: 30px;
+}
+
+.homepage-col{
+    /* border:solid 1px black */
+    padding: 10px 20px ;
+}
+
+.crypto-card-container {
+    margin-top: 30px;
+}
+
+/* news */
+.news-card {
+    min-height: 260px;
+}
+
+.news-content-wrapper {
+}
+
+.news-image-container {
+    float: right;
+    padding: 3px;
+    height: 100%;
+}
+
+.news-paragraph-wrapper {
+}
