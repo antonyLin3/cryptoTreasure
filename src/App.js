@@ -25,9 +25,10 @@ const App = () => {
                             <Route  path='/news' element={<News />} />
                         </Routes>
                 </Content>
+                
                 <Footer style={{textAlign: 'center', backgroundColor:'#001529'}}>
                     <Typography.Title level={5} style={{color: 'white'}}>
-                        AntonyLin produce<br />
+                        AntonyLin produce <br />
                         All right reserve
                     </Typography.Title>
                     <Space>

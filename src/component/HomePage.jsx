@@ -18,7 +18,7 @@ const HomePage = () => {
     const { Title } = Typography
     return (
         <>
-            <Title level={2} className='heading'>Global Crypto Status</Title>
+            <Title level={2} className='heading'>加密貨幣市場狀況</Title>
             <Row>
                 <Col className="homepage-col" span={12}> <Statistic title="Total CryptoCurrencies" value={globalStatus.total}/></Col>
                 <Col className="homepage-col" span={12}> <Statistic title="Total Exchanges" value={millify(globalStatus.totalExchanges)}/></Col>
@@ -32,9 +32,9 @@ const HomePage = () => {
                 <CryptoCurrencies simplified/>
             </div>
             <div className='home-heading-container'>
-                <Title level={2} className="home-title">Latest crypto news</Title>
-                <Title level={4} className="show-more"><Link to="/News">show more</Link></Title>
-                <News />
+                <Title level={2} className="home-title" style={{display: 'inline-block', marign:'30 20'}}>Latest crypto news</Title>
+                <Title level={4} className="show-more" style={{display: 'inline-block', marginLeft: '30px'}}><Link to="/News">show more</Link></Title>
+                <News simplified/>
             </div>
         </>
     )
