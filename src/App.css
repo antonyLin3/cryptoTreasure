@@ -1,9 +1,12 @@
+@import '~antd/dist/antd.css';
+
+
+
 .home-heading-container {
     margin-top: 30px;
 }
 
 .homepage-col{
-    /* border:solid 1px black */
     padding: 10px 20px ;
 }
 
@@ -25,5 +28,30 @@
     height: 100%;
 }
 
-.news-paragraph-wrapper {
+
+/* crypto details */
+.coin-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.coin-heading-container{
+    text-align: center;
+}
+
+.coin-stats {
+    border-bottom: solid 1px black;
+    padding: 20px
+}
+
+.coin-stats-name {
+    display: inline-block;
+}
+.coin-stats-value {
+    display: inline-flex;
+    justify-content: right;
+    font-weight: bold;
+
+    /* float: right; */
 }

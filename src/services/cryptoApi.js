@@ -5,9 +5,10 @@ const cryptoApiHeaders = {
     'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
 }
 
+// 為了要節省請求次數，這裡會先關掉
 const baseUrl = 'https://coinranking1.p.rapidapi.com/'
 
-const createRequest = (url, coinId) => ({ url, paramas: {'referenceCurrencyUuid': coinId}, headers: cryptoApiHeaders})
+const createRequest = (url) => ({ url, headers: cryptoApiHeaders})
 
 export const cryptoApi = createApi({
     reducerPath: 'cryptoApi',
@@ -16,15 +17,20 @@ export const cryptoApi = createApi({
         getCryptos: builder.query({
             query: (count) => createRequest(`/coins?limit=${count}`)
         }),
-        getCoinPrice: builder.query({
-            query: (coinId) => createRequest('/coin/Qwsogvtv82FCd/price', coinId)
+        getCoinDetails: builder.query({
+            query: (coinId, timePeriod) => ({
+                url: '/coin/Qwsogvtv82FCd',
+                params: {'referenceCurrencyUuid': coinId, 'timePeriod': timePeriod},
+                headers: cryptoApiHeaders
+        })
+            // createRequest('/coin/Qwsogvtv82FCd/Details', coinId)
         })
     })
 })
 
 // console.log("安安"+JSON.stringify(createRequest('/coins')))
 
-export const { useGetCryptosQuery, useGetCoinPriceQuery } = cryptoApi
+export const { useGetCryptosQuery, useGetCoinDetailsQuery } = cryptoApi
 
 // const options = {
 //     method: 'GET',
