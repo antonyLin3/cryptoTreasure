@@ -22,15 +22,21 @@ export const cryptoApi = createApi({
                 url: '/coin/Qwsogvtv82FCd',
                 params: {'referenceCurrencyUuid': coinId, 'timePeriod': timePeriod},
                 headers: cryptoApiHeaders
-        })
-            // createRequest('/coin/Qwsogvtv82FCd/Details', coinId)
-        })
+            })
+        }),
+        getCoinHistory: builder.query({
+            query: (coinId, timePeriod) => ({
+                url: '/coin/Qwsogvtv82FCd/history',
+                params: {'referenceCurrencyUuid': coinId, 'timePeriod': timePeriod},
+                headers: cryptoApiHeaders
+            })
+        }),
     })
 })
 
 // console.log("安安"+JSON.stringify(createRequest('/coins')))
 
-export const { useGetCryptosQuery, useGetCoinDetailsQuery } = cryptoApi
+export const { useGetCryptosQuery, useGetCoinDetailsQuery, useGetCoinHistoryQuery } = cryptoApi
 
 // const options = {
 //     method: 'GET',

@@ -42,16 +42,69 @@
 
 .coin-stats {
     border-bottom: solid 1px black;
-    padding: 20px
+    padding: 20px 5px
+}
+
+.stats-container {
+    width: 60%;
+}
+.coin-details-heading {
+    margin: 55px 0px 0px 0px;
 }
 
 .coin-stats-name {
-    display: inline-block;
+    display: inline;
 }
 .coin-stats-value {
-    display: inline-flex;
-    justify-content: right;
+    float: right;
     font-weight: bold;
+}
 
-    /* float: right; */
+/* avatar */
+.anticon { 
+    padding: 5px;
+}
+
+.ant-row.coin-link {
+    border-bottom: solid 1px black;
+    padding: 10px 5px;
+    display: block;
+}
+
+.link-name {
+    display: inline;
+    font-size: 100px;
+    /* border: solid 1px */
+}
+.link-url {
+    display: blcok;
+    float: right;
+    /* border: solid 1px */
+}
+
+/* line chart */
+.chart-header {
+    width: 60%;
+    display: inline-block;
+    /* border: solid 1px; */
+    height: 40px;
+}
+.chart-title {
+    display: inline;
+    /* border: solid 1px; */
+
+}
+.price-container {
+    margin: 0;
+    height: 40px;
+    width: 300px;
+    float: right;
+    /* border: solid 1px; */
+
+}
+.price-change ,.current-price{
+    /* border: solid 1px; */
+    padding: 0px 10px;
+    display: inline-block;
+    /* margin-bottom: 0px; */
 }
