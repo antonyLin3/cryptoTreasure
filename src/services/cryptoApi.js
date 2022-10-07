@@ -19,20 +19,21 @@ export const cryptoApi = createApi({
         }),
         getCoinDetails: builder.query({
             query: (coinId, timePeriod) => ({
-                url: '/coin/Qwsogvtv82FCd',
-                params: {'referenceCurrencyUuid': coinId, 'timePeriod': timePeriod},
+                url: `/coin/${coinId}`,
+                params: {'referenceCurrencyUuid': 'yhjMzLPhuIDl', 'timePeriod': timePeriod},
                 headers: cryptoApiHeaders
             })
         }),
         getCoinHistory: builder.query({
-            query: (coinId, timePeriod) => ({
-                url: '/coin/Qwsogvtv82FCd/history',
-                params: {'referenceCurrencyUuid': coinId, 'timePeriod': timePeriod},
+            query: ({coinId, timePeriod}) => ({
+                url: `/coin/${coinId}/history`,
+                params: {'referenceCurrencyUuid': 'yhjMzLPhuIDl', 'timePeriod':  timePeriod},
                 headers: cryptoApiHeaders
             })
         }),
     })
 })
+
 
 // console.log("安安"+JSON.stringify(createRequest('/coins')))
 

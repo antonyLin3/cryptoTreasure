@@ -22,7 +22,7 @@ const News = ({simplified}) => {
     const [newCategory, setNewCategory] = React.useState('cryptoCurrency')
     const { data: cryptoNews, isFetching} = useGetCryptoNewsQuery(newCategory)
     const { data: cryptoList } = useGetCryptosQuery(100)
-    console.log("News "+JSON.stringify(cryptoNews))
+    // console.log("News "+JSON.stringify(cryptoNews))
 
     if(!cryptoNews?.value) return 'Loading'
 

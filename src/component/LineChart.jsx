@@ -1,20 +1,36 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title as ChartTitle, Tooltip, Legend} from 'chart.js'
 import { Col, Row, Typography } from 'antd'
 
-const { Title } = Typography
+
+
+
 
 const LineChart = ({coinHistory, currentPrice, coinName}) => {
+    const { Title } = Typography
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        // ChartTitle,
+        // Tooltip,
+        // Legend
+    )
 
     const coinPrice = []
     const coinTimeStamp = []
 
     for(let i = 0; i < coinHistory?.data?.history?.length; i++){
-        coinPrice.push(coinHistory.data.history[i].price)
-        // let coinTimeStampElement = new Date(1995,11,19)
-        // coinTimeStamp.push(new Date(coinHistory.data.history[i].timestamp).toLocaleDateString())
+        coinPrice.unshift(coinHistory.data.history[i].price)
+        // let timeStampElement = new Date()
+        coinTimeStamp.unshift(new Date(coinHistory?.data?.history[i].timestamp*1000).toLocaleString())
+        //`${timeStampElement.getFullYear()}/${timeStampElement.getMonth()+1}/${timeStampElement.getDate()}`
+        //  ${timeStampElement.getHours()}時  ${timeStampElement.getMinutes()}分  ${timeStampElement.getSeconds()}秒
     }
+
+    // console.log(coinTimeStamp)
 
     const data = {
         labels: coinTimeStamp,
