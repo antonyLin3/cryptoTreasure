@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route, Link, Navigate } from "react-router-dom"
 import { Layout, Typography, Space } from "antd"
 import './App.css'
 
@@ -11,18 +11,26 @@ const App = () => {
     return (
     <div className='app'>
         <Layout>
-            <Sider className='navbar'>
+            <Sider 
+                className='navbar'
+                breakpoint='lg'
+                collapsedWidth="0"
+
+            >
                 <Navbar />
             </Sider>
 
             <Layout className='main'>
                 <Content className='routes' style={{margin: '30px 20px'}}>
                         <Routes>
+                            <Route path='/' element={<Navigate to="/homePage" />} />
                             <Route path='/homepage' element={<HomePage />} />
                             <Route path='/exchanges' element={<Exchanges />} />
                             <Route path='/cryptoCurrencies' element={<CryptoCurrencies />} />
                             <Route  path='/crypto/:coinId' element={<CryptoDetail />} />
                             <Route  path='/news' element={<News />} />
+                            {/* <Redirect from="/" to="/homepage"/> */}
+                            {/* <DefaultRoute element={<HomePage />} /> */}
                         </Routes>
                 </Content>
                 

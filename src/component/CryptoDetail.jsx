@@ -89,7 +89,7 @@ const CryptoDetail = () => {
           <Title level={2} className="coin-name" style={{ color: "#1890ff" }}>
             {cryptoDetails?.name} {cryptoDetails?.slug} price
           </Title>
-          <p>
+          <p className="coin-description">
             {cryptoDetails?.name} live price in US dollars View value
             statistics, market cap and supply.
           </p>

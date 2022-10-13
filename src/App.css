@@ -1,6 +1,8 @@
 @import '~antd/dist/antd.css';
 
-
+.heading {
+    margin: 30px 0px;
+}
 
 .home-heading-container {
     margin-top: 30px;
@@ -19,8 +21,6 @@
     min-height: 260px;
 }
 
-.news-content-wrapper {
-}
 
 .news-image-container {
     float: right;
@@ -30,6 +30,17 @@
 
 
 /* crypto details */
+.coin-name {
+    /* paddinpx; */
+}
+.coin-description {
+    padding: 10px;
+}
+
+.coin-heading-container {
+    
+}
+
 .coin-detail-container {
     display: flex;
     flex-direction: column;
@@ -84,27 +95,41 @@
 
 /* line chart */
 .chart-header {
-    width: 60%;
-    display: inline-block;
-    /* border: solid 1px; */
+    display: block;
     height: 40px;
 }
 .chart-title {
     display: inline;
     /* border: solid 1px; */
-
 }
 .price-container {
-    margin: 0;
+    display: inline-block;
+    min-width: 300px;
+    padding-left: 30px;
     height: 40px;
-    width: 300px;
-    float: right;
-    /* border: solid 1px; */
 
 }
 .price-change ,.current-price{
     /* border: solid 1px; */
-    padding: 0px 10px;
-    display: inline-block;
+    padding: 0px 5px;
+    display: inline;
     /* margin-bottom: 0px; */
+}
+
+/* exchange-page */
+.exchange-list-title{
+    padding: 10px 32px;
+}
+
+.exchange-list {
+    padding: 20px;
+    /* border: solid 1px; */
+    display: flex;
+    align-items: center;
+}
+
+/* sidebar */
+.ant-layout-sider-zero-width-trigger-left {
+    position: absolute;
+    top: 10px;
 }

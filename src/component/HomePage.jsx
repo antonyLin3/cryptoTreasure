@@ -27,13 +27,13 @@ const HomePage = () => {
                 <Col className="homepage-col" span={12}> <Statistic title="Total Markets" value={millify(globalStatus?.totalMarkets)}/></Col>
             </Row>
             <div className='home-heading-container'>
-                <Title level={2} className="home-title" style={{display: 'inline', marign:'30 20'}}>Top10 crypto currencies</Title>
-                <Title level={4} className="show-more" style={{display: 'inline', marginLeft: '30px'}}><Link to="/CryptoCurrencies">show more</Link></Title>
+                <Title level={2} className="home-title" style={{display: 'inline', marign:'30 20'}}>加密貨幣市值排行榜</Title>
+                <Title level={4} className="show-more" style={{display: 'inline', marginLeft: '30px'}}><Link to="/CryptoCurrencies">顯示更多</Link></Title>
                 <CryptoCurrencies simplified/>
             </div>
             <div className='home-heading-container'>
-                <Title level={2} className="home-title" style={{display: 'inline-block', marign:'30 20'}}>Latest crypto news</Title>
-                <Title level={4} className="show-more" style={{display: 'inline-block', marginLeft: '30px'}}><Link to="/News">show more</Link></Title>
+                <Title level={2} className="home-title" style={{display: 'inline-block', marign:'30 20'}}>最新加密貨幣新聞</Title>
+                <Title level={4} className="show-more" style={{display: 'inline-block', marginLeft: '30px'}}><Link to="/News">顯示更多</Link></Title>
                 <News simplified/>
             </div>
         </>
