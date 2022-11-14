@@ -42,9 +42,9 @@ const CryptoCurrencies = ({simplified}) => {
                                 hoverable
                                 loading={isFetching}
                             >
-                                <p>price: {millify(currency.price)}</p>
-                                <p>market Cap: {millify(currency.marketCap)}</p>
-                                <p>Daily Change: {millify(currency.change)}</p>
+                                <p>價格: {millify(currency.price)}</p>
+                                <p>市場份額: {millify(currency.marketCap)}</p>
+                                <p>今日價格變化: {millify(currency.change)}</p>
                             </Card>
                         </Link>
                     </Col>

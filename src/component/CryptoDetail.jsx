@@ -37,7 +37,7 @@ const CryptoDetail = () => {
   const { data: coinHistory } = useGetCoinHistoryQuery({'coinId':coinId, 'timePeriod':timePeriod})
   if (isFetching) return "loading"
 
-  const time = ["3h", "24h", "7d", "30d", "1m", "1y", "3y", "5y"];
+  const time = ["3h", "24h", "7d", "30d", "3m", "1y", "3y", "5y"];
   const cryptoDetails = data?.data?.coin;
   // console.log(JSON.stringify(data))
   console.log(cryptoDetails)
@@ -49,36 +49,36 @@ const CryptoDetail = () => {
   const stats = [
     //詳細資訊：1:37:19 45
     {
-      title: "Price to USD",
+      title: "美元價格",
       value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`,
       icon: <DollarCircleOutlined />,
     },
-    { title: "Rank", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
+    { title: "排名", value: cryptoDetails?.rank, icon: <NumberOutlined /> },
     {
-      title: "24h volume",
+      title: "24h成交量",
       value: `$ ${
         cryptoDetails["24hVolume"]==true && millify(cryptoDetails["24hVolume"])
       }`,
       icon: <ThunderboltOutlined />,
     },
     {
-      title: "MarketCap",
+      title: "市值",
       value: `$ ${cryptoDetails.marketCap && millify(cryptoDetails.marketCap)}`,
       icon: <DollarCircleOutlined />,
     },
     {
-      title: "All-time-height(daily avg)",
+      title: "歷史最高價(日平均)",
       value: `$ ${millify(cryptoDetails.allTimeHigh.price)}`,
       icon: <TrophyOutlined />,
     },
   ];
 
   const genericStats = [
-    { title: 'Number Of Markets', value: cryptoDetails.numberOfMarkets, icon: <FundOutlined/> },
-    { title: 'Number Of Exchange', value: cryptoDetails.numberOfExchanges, icon: <MoneyCollectOutlined/> },
-    { title: 'Approved Supply', value: cryptoDetails.supply.confirmed ? <CheckCircleOutlined/> : <StopOutlined/>, icon: <ExclamationCircleOutlined /> },
-    { title: 'Total Supply', value: millify(cryptoDetails.supply.total), icon: <ExclamationCircleOutlined/> },
-    { title: 'Circulating Supply', value: millify(cryptoDetails.supply.circulating), icon: <ExclamationCircleOutlined /> }
+    { title: '市場數量', value: cryptoDetails.numberOfMarkets, icon: <FundOutlined/> },
+    { title: '交易所數量', value: cryptoDetails.numberOfExchanges, icon: <MoneyCollectOutlined/> },
+    { title: '供應批准', value: cryptoDetails.supply.confirmed ? <CheckCircleOutlined/> : <StopOutlined/>, icon: <ExclamationCircleOutlined /> },
+    { title: '總供給數量', value: millify(cryptoDetails.supply.total), icon: <ExclamationCircleOutlined/> },
+    { title: '已發行數量', value: millify(cryptoDetails.supply.circulating), icon: <ExclamationCircleOutlined /> }
   ]
 
   return (
@@ -87,11 +87,10 @@ const CryptoDetail = () => {
       <Col className="coin-detail-container">
         <Col className="coin-heading-container">
           <Title level={2} className="coin-name" style={{ color: "#1890ff" }}>
-            {cryptoDetails?.name} {cryptoDetails?.slug} price
+            {cryptoDetails?.name} {cryptoDetails?.slug} 價格
           </Title>
           <p className="coin-description">
-            {cryptoDetails?.name} live price in US dollars View value
-            statistics, market cap and supply.
+            {cryptoDetails?.name} 即時美元價格圖表
           </p>
           <hr />
         </Col>
@@ -110,9 +109,9 @@ const CryptoDetail = () => {
           <Col className="coin-value-statistics">
             <Col className="coin-value-statistics-heading">
               <Title level={3} className="coin-details-heading">
-                {cryptoDetails.name} Value Statistics
+                {cryptoDetails.name} 總市值
               </Title>
-              <p>An overview showing the stats of {cryptoDetails.name}</p>
+              <p>以下為{cryptoDetails.name}數據概覽</p>
             </Col>
             {stats.map(({ icon, title, value }) => (
               <Col className="coin-stats">
@@ -128,9 +127,9 @@ const CryptoDetail = () => {
           <Col className="other-stats-info">
             <Col className="coin-value-statistics-heading">
               <Title level={3} className="coin-details-heading">
-                {cryptoDetails.name} other-stats-info
+                {cryptoDetails.name} 其他相關數據
               </Title>
-              <p>An overview showing the stats of {cryptoDetails.name}</p>
+              <p>以下為{cryptoDetails.name}其他相關數據</p>
             </Col>
             {genericStats.map(({ icon, title, value }) => (
               <Col className="coin-stats">
@@ -147,13 +146,13 @@ const CryptoDetail = () => {
           <Col className="coin-desc-link">
             <Row className="coin-desc">
               <Title level={3} className="coin-details-heading">
-                What is {cryptoDetails.name}
+                {cryptoDetails.name}是什麼
               </Title>
               {HTMLReactParser(cryptoDetails.description)}
             </Row>
             <Col className="coin-link">
               <Title level={3} className="coin-details-heading">
-                {cryptoDetails.name} Links
+                {cryptoDetails.name}相關連結
               </Title>
               {cryptoDetails.links.map((link) => (
                 <Row className="coin-link" key={link.name}>

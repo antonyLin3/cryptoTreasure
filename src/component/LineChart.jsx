@@ -64,7 +64,7 @@ const LineChart = ({coinHistory, currentPrice, coinName}) => {
                 <Title level={2} className="chart-title">{coinName}</Title>
                 <Col className='price-container'>
                     <Title level={5} className='price-change'>{coinHistory?.data?.change}%</Title>
-                    <Title level={5} className='current-price'>Current {coinName} Price: $ {currentPrice}</Title>
+                    <Title level={5} className='current-price'> 當前 {coinName} 價格: $ {currentPrice}</Title>
                 </Col>
             </Row>
             <Line data={data} optopn={option}/>

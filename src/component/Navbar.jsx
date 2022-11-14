@@ -6,24 +6,11 @@ import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOut
 import icon from '../images/money.png'
 
 const Navbar = () => {
-
-    // const [activeMenu, setActiveMenu] = React.useState(true)
-    // const [screenSize, setScreenSize] = React.useState(null)
-
-    // React.useEffect(() => {
-    //     const handleResize = () => setScreenSize(window.innerWidth)
-    //     window.addEventListener('resize', handleResize)
-    //     handleResize()
-    //     return () => window.removeEventListener('resize', handleResize)
-    // },[])
-
-    // React.useEffect(() => {
-    //     if (screenSize < 700){
-    //         setActiveMenu(false)
-    //     } else {
-    //         setActiveMenu(true)
-    //     }
-    // },[screenSize])
+    const [menuKey, setMenuKey] = React.useState('0')
+    const handleMenu = (e) => {
+        setMenuKey(e.key)
+    }
+    
 
     return (
         <div className='nav-container'> 
@@ -38,7 +25,9 @@ const Navbar = () => {
 
             <Menu 
                 theme ='dark'
-                defaultSelectedKeys={['0']}
+                // defaultSelectedKeys={['0']}
+                selectedKeys={menuKey}
+                onClick={handleMenu}
             >
                 <Menu.Item icon={<HomeOutlined />} key='0'>
                     <Link to="/homePage">首頁</Link>

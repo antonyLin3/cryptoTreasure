@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link, Navigate } from "react-router-dom"
+import { Routes, Route, Link, Navigate} from "react-router-dom"
 import { Layout, Typography, Space } from "antd"
 import './App.css'
 
@@ -7,6 +7,7 @@ import { Navbar, HomePage, CryptoCurrencies, CryptoDetail, News, Exchanges } fro
 
 const App = () => {
     const { Header, Content, Footer, Sider } = Layout;
+    
 
     return (
     <div className='app'>

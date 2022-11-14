@@ -21,10 +21,10 @@ const Exchanges = () => {
   return (
     <div>
       <Row className='exchange-list-title'>
-        <Col span={6}>Exchanges</Col>
-        <Col span={6}>24h BTCTrade Volume</Col>
-        <Col span={6}>Trust Score</Col>
-        <Col span={6}>Establish Year</Col>
+        <Col span={6}>交易所名稱</Col>
+        <Col span={6}>24h BTC交易量</Col>
+        <Col span={6}>信任指數</Col>
+        <Col span={6}>成立日期</Col>
       </Row>
         {exchangeList.map((exchange, i) => {
           return <Collapse>
